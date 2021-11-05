@@ -14,6 +14,14 @@ const options = {
     useUnifiedTopology: true
 }
 
+app.use(morgan('tiny'));
+app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({extended:true}));
+app.use(history());
+app.use(express.static(path.join(__dirname,'public')));
+app.use('/api', require('./routes/nota'));
+
 mongoose.connect(uri, options).then(
     ()=>{
         console.log('Conectado a mongozzz');
@@ -22,13 +30,6 @@ mongoose.connect(uri, options).then(
         console.log('mamaste por pendejo');
     }
 )
-
-app.use(morgan('tiny'));
-app.use(cors());
-app.use(express.json());
-app.use(express.urlencoded({extended:true}));
-app.use(history());
-app.use(express.static(path.join(__dirname,'public')));
 
 app.get('/', function(req, res){
     res.send('Hola Mundo');
