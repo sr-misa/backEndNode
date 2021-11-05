@@ -1,0 +1,29 @@
+{
+  "name": "lm-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "babel-node app.js --exec",
+    "dev": "nodemon app.js",
+    "devbabel": "nodemon app.js --exec babel-node"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/cli": "^7.16.0",
+    "@babel/core": "^7.16.0",
+    "@babel/node": "^7.16.0",
+    "@babel/preset-env": "^7.16.0",
+    "babel-upgrade": "^0.0.8",
+    "connect-history-api-fallback": "^1.6.0",
+    "core-js": "^3.19.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "git": "^0.1.5",
+    "mongoose": "^6.0.12",
+    "morgan": "^1.10.0",
+    "node": "^17.0.1"
+  }
+}
