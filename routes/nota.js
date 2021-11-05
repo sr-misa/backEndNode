@@ -1,10 +1,9 @@
 import express from 'express';
 const router = express.Router();
 
-// Importar Modelo
 import Nota from '../models/nota';
 
-// Agregar una nota
+// agregar
 router.post('/nueva-nota', async(req, res) => {
     const body = req.body;
     
@@ -21,7 +20,7 @@ router.post('/nueva-nota', async(req, res) => {
     }
 });
 
-// Obtener nota (GET) con el _id
+// obtener una nota
 router.get('/nota/:id', async (req, res) => {
     const _id = req.params.id;
     try {
@@ -36,7 +35,7 @@ router.get('/nota/:id', async (req, res) => {
 });
 
 
-// Obtener todas las notas
+// todas las notas
 router.get('/nota', async (req, res) => {
     try {
         const notasDB = await Nota.find();
@@ -49,7 +48,7 @@ router.get('/nota', async (req, res) => {
     }
 });
 
-// Borrar nota (DELETE) con el _id
+// borrar una nota
 router.delete('/nota/:id', async (req, res) => {
     const _id = req.params.id;
     try {
@@ -68,7 +67,7 @@ router.delete('/nota/:id', async (req, res) => {
     }
 });
 
-// Actualizar una nota (PUT)
+// actualizar
 router.put('/nota/:id', async(req, res) => {
     const _id = req.params.id;
     const body = req.body;
@@ -85,5 +84,5 @@ router.put('/nota/:id', async(req, res) => {
     }
 });
 
-// Exportamos la configuración
+// exportación 
 module.exports = router;
